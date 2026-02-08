@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Manager & DOM Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="top-row">
+        <section class="card shadow">
+            <h2>Add New Event</h2>
+            <div class="form-group">
+                <label>Event Title:</label>
+                <input type="text" id="eventTitle" placeholder="Enter title...">
+                
+                <label>Event Date:</label>
+                <input type="date" id="eventDate">
+                
+                <label>Category:</label>
+                <select id="eventCategory">
+                    <option value="Conference">Conference</option>
+                    <option value="Social">Social</option>
+                    <option value="Workshop">Workshop</option>
+                </select>
+                
+                <label>Description:</label>
+                <textarea id="eventDesc"></textarea>
+                
+                <button onclick="addEvent()" class="btn-primary">Add Event</button>
+            </div>
+        </section>
+
+        <section class="card shadow">
+            <h2>My Events</h2>
+            <div class="button-row">
+                <button class="btn-secondary" onclick="clearEvents()">Clear All Events</button>
+                <button class="btn-secondary">Add Sample Events</button>
+            </div>
+            <div id="eventList" class="event-list">
+                <div class="event-card">
+                    <span class="delete-icon">✖</span>
+                    <h3>Emifest</h3>
+                    <p class="date"> 2026-01-14</p>
+                    <span class="badge">Social</span>
+                    <p>lorem ipsum</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="card shadow dom-demo">
+        <h2>DOM Manipulation Demo</h2>
+        <div class="demo-box">
+            <p>You Pressed: Shift</p>
+        </div>
+    </section>
+</div>
+
+<script>
+
+    function addEvent() {
+    const title = document.getElementById('eventTitle').value;
+    const date = document.getElementById('eventDate').value;
+    const category = document.getElementById('eventCategory').value;
+    const desc = document.getElementById('eventDesc').value;
+
+    if(!title || !date) return alert("Please fill in the title and date");
+
+    const eventList = document.getElementById('eventList');
+
+    const card = document.createElement('div');
+    card.className = 'event-card';
+    card.innerHTML = `
+        <span class="delete-icon" onclick="this.parentElement.remove()">✖</span>
+        <h3>${title}</h3>
+        <p class="date">📅 ${date}</p>
+        <span class="badge">${category}</span>
+        <p>${desc}</p>
+    `;
+
+    eventList.appendChild(card);
+}
+
+function clearEvents() {
+    document.getElementById('eventList').innerHTML = "";
+}
+const original = document.getElementById('original');
+document.getElementById('htmlOutput').innerHTML = "innerHTML: " + original.innerHTML;
+document.getElementById('textOutput').innerText = "innerText: " + original.innerText;
+document.getElementById('contentOutput').textContent = "textContent: " + original.textContent;
+</script>
+</body>
+</html>
