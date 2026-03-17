@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #811dce;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.top-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    width: 900px;
+
+    max-width: 90%;
+
+}
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+form {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+input {
+
+    flex: 1;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+}
+
+button {
+
+    background: #ff6a33;
+
+    border: none;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+button:hover {
+    background: #e85c2b;
+}
+
+.history-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#search-history {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#search-history button {
+
+    padding: 6px 12px;
+
+    font-size: 14px;
+
+}
+
+.row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.error {
+
+    color: red;
+
+    margin-top: 10px;
+
+}
+
+.console-card {
+
+    width: 900px;
+
+    max-width: 90%;
+
+    margin-top: 25px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+#console {
+
+    margin-top: 10px;
+
+    background: #7301d7;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    font-family: monospace;
+
+    line-height: 1.6;
+
+}
